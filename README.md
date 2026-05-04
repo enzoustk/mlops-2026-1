@@ -8,6 +8,15 @@ conda activate intent-clf
 pip install -r requirements.txt
 ```
 
+## Como treinar um modelo?
+
+```bash
+python intent_classifier.py train \
+    --config="confusion/confusion_config.yml" \
+    --training_data="confusion/confusion_intents.yml" \
+    --wandb_project="mlops-2026-1"
+```
+
 ## Como rodar?
 
 Certifique-se de preencher o arquivo .env com as variáveis de ambiente.

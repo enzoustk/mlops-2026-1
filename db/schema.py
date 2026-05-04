@@ -22,5 +22,5 @@ class Response(BaseModel):
     id: Optional[str] = None 
     text: str
     owner: str
-    intent_predictions: Dict[str, IntentPrediction]
+    predictions: Dict[str, IntentPrediction]
     timestamp: int

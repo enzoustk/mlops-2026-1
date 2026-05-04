@@ -1,3 +1,8 @@
+"""
+uvicorn app.app:app --host 0.0.0.0 --port 8000 --log-level debug
+"""
+
+
 import os
 import traceback
 from dotenv import load_dotenv
@@ -67,11 +72,7 @@ app = FastAPI(
 # Controle de CORS (Cross-Origin Resource Sharing) para prevenir ataques de fontes não autorizadas.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost",
-        # "http://localhost:3000",  # React ou outra frontend local
-        # "https://meusite.com",    # domínio em produção
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],              # permite todos os métodos: GET, POST, etc
     allow_headers=["*"],              # permite todos os headers (Authorization, Content-Type...)
