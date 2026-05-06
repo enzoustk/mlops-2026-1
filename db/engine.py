@@ -1,3 +1,10 @@
+"""
+engine.py
+=========
+
+Módulo de conexão e interação básica com o banco de dados MongoDB para registro das requisições e predições.
+"""
+
 import os
 from pymongo import MongoClient
 from dotenv import load_dotenv

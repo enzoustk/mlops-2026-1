@@ -1,4 +1,7 @@
 """
+intent_classifier.py
+====================
+
 This script works as a module and as a CLI tool.
 
 To use it as a module, you can do:
@@ -13,30 +16,28 @@ To use it as a module, you can do:
     classifier = IntentClassifier(config="models/confusion_config.yml", load_model="adaj/intent-classifier-2025-2/confusion-clf:v1")
     # predict a new text
     classifier.predict(input_text="oi")
-    # cross-validate the model
-    classifier.cross_validation(n_splits=5)
 
 Or, or you can use it as a CLI tool, you can do:
 ::
 
-cd intent_classifier
+    cd intent_classifier
 
-python intent_classifier.py train \
-    --config="confusion/confusion_config.yml" \
-    --training_data="confusion/confusion_intents.yml" \
-    --save_model="confusion/confusion.keras" \
-    --wandb_project="mlops-2026-1"
+    python intent_classifier.py train \
+        --config="confusion/confusion_config.yml" \
+        --training_data="confusion/confusion_intents.yml" \
+        --save_model="confusion/confusion.keras" \
+        --wandb_project="mlops-2026-1"
 
-python intent_classifier.py train \
-    --config="clair_intents/clair_intents_config.yml" \
-    --training_data="clair_intents/clair_intents.yml" \
-    --save_model="clair_intents/clair_intents.keras" \
-    --wandb_project="mlops-2026-1"
+    python intent_classifier.py train \
+        --config="clair_intents/clair_intents_config.yml" \
+        --training_data="clair_intents/clair_intents.yml" \
+        --save_model="clair_intents/clair_intents.keras" \
+        --wandb_project="mlops-2026-1"
 
-python intent_classifier.py predict \
-    --load_model="models/confusion.keras" \
-    --input_text="teste teste" \
-    --wandb_project="intent-classifier"
+    python intent_classifier.py predict \
+        --load_model="models/confusion.keras" \
+        --input_text="teste teste" \
+        --wandb_project="intent-classifier"
 
 """
 # instalar alguns pacotes auxiliares

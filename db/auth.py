@@ -1,10 +1,12 @@
 """
+auth.py
+=======
 
-# Criar um novo token
-python db/auth.py create --owner="alguem" --expires_in_days=365
+Criar um novo token:
+    python db/auth.py create --owner="alguem" --expires_in_days=365
 
-# Ler todos os tokens
-python db/auth.py read_all
+Ler todos os tokens:
+    python db/auth.py read_all
 
 """
 

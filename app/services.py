@@ -1,3 +1,10 @@
+"""
+services.py
+===========
+
+Módulo responsável pela lógica de negócios da aplicação, como carregar os classificadores e processar predições.
+"""
+
 from typing import Dict
 from datetime import datetime, timezone
 import logging
