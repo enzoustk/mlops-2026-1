@@ -4,6 +4,9 @@ on:
     branches:
       - main  # ou master, dependendo do nome da sua branch principal
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
