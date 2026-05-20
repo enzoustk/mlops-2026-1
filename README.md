@@ -35,3 +35,5 @@ Certifique-se de preencher o arquivo .env com as variáveis de ambiente.
 # Na pasta raiz:
 python -m uvicorn app.app:app --host 0.0.0.0 --port 8000 --log-level debug --reload
 ```
+
+<!-- Lab 4 trigger CI -->
