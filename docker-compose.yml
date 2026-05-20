@@ -1,5 +1,20 @@
 name: mlops-2026-1
 services:
+  mongo:
+    image: mongo:7
+    container_name: mlops-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
   mlops-container:
     container_name: mlops-container
     build:
@@ -8,4 +23,12 @@ services:
     ports:
       - "8000:8000"
     env_file: .env
+    environment:
+      MONGO_URI: "mongodb://mongo:27017"
+    depends_on:
+      mongo:
+        condition: service_healthy
     restart: unless-stopped
+
+volumes:
+  mongo-data:
